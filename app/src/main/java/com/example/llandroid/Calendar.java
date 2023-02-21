@@ -31,6 +31,7 @@ public class Calendar extends AppCompatActivity implements CalWeekAdapter.OnItem
         initWidgets();
         CalendarUtilities.selectedDate = LocalDate.now();
         setMonthView();
+
     }
 
     private void initWidgets()
@@ -38,6 +39,7 @@ public class Calendar extends AppCompatActivity implements CalWeekAdapter.OnItem
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearApp);
     }
+
 
     private void setMonthView()
     {
