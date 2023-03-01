@@ -13,6 +13,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsActivity extends AppCompatActivity
 {
+    // declaring variables for the settings view, switch, text views, and user settings
     private View parentView;
     private SwitchMaterial themeSwitch;
     private TextView themeTV, titleTV, aboutID, versionID;
@@ -25,13 +26,16 @@ public class SettingsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        // gets the UserSettings Java file
         settings = (UserSettings) getApplication();
 
+        // gets the methods shown below
         initWidgets();
         loadSharedPreferences();
         initSwitchListener();
     }
 
+    // set the text view variables to their respective IDs
     private void initWidgets()
     {
         themeTV = findViewById(R.id.themeTV);
@@ -42,6 +46,7 @@ public class SettingsActivity extends AppCompatActivity
         versionID = findViewById(R.id.versionID);
     }
 
+    //sets up the theme of the app based on the users preference
     private void loadSharedPreferences()
     {
         SharedPreferences sharedPreferences = getSharedPreferences(UserSettings.PREFERENCES, MODE_PRIVATE);
@@ -50,6 +55,7 @@ public class SettingsActivity extends AppCompatActivity
         updateView();
     }
 
+    // sets up the switch for the theme
     private void initSwitchListener()
     {
         themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
@@ -70,6 +76,7 @@ public class SettingsActivity extends AppCompatActivity
         });
     }
 
+    // updates the color of the text based on the color theme the user picks
     private void updateView()
     {
         final int black = ContextCompat.getColor(this, R.color.black);
