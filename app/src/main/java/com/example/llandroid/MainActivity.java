@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this,Calendar.class);
+                Intent i = new Intent(MainActivity.this,SettingsActivity.class);
                 startActivity(i);
                 finish();
 
