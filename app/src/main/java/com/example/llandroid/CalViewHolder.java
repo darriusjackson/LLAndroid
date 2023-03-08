@@ -11,10 +11,13 @@ import java.util.ArrayList;
 
 public class CalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
+    // variables for the calendar view holder
     private final ArrayList<LocalDate> days;
     public final View parentView;
     public final TextView dayOfMonth;
     private final CalWeekAdapter.OnItemListener onItemListener;
+
+    //method used to set the calendar view holder and holds day for the calendar
     public CalViewHolder(@NonNull View itemView, CalWeekAdapter.OnItemListener onItemListener, ArrayList<LocalDate> days)
     {
         super(itemView);
@@ -25,6 +28,7 @@ public class CalViewHolder extends RecyclerView.ViewHolder implements View.OnCli
         this.days = days;
     }
 
+    // onClick method for the view holder
     @Override
     public void onClick(View view)
     {

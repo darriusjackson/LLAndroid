@@ -6,9 +6,11 @@ import java.util.ArrayList;
 
 public class Event
 {
+    // array list variable for the events the user added to the calendar
     public static ArrayList<Event> eventsList = new ArrayList<>();
 
 
+    // method to add dates to the new event/task
     public static ArrayList<Event> eventsForDate(LocalDate date)
     {
         ArrayList<Event> events = new ArrayList<>();
@@ -22,11 +24,12 @@ public class Event
         return events;
     }
 
-
+// variables for getter and setter methods
     private String name;
     private LocalDate date;
     private LocalTime time;
 
+    // constructor method that will be used in the EventEdit code
     public Event( String name, LocalDate date, LocalTime time)
     {
         this.name = name;
@@ -36,7 +39,7 @@ public class Event
 
 
 
-
+// getter and setter methods for the variables
     public String getName()
     {
         return name;

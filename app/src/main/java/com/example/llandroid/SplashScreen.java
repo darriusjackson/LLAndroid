@@ -3,7 +3,7 @@ package com.example.llandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+// displays the splash screen of the app when the user first taps on the app icon
 public class SplashScreen extends AppCompatActivity {
 
     @Override

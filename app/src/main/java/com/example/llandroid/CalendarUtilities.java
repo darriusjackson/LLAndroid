@@ -9,26 +9,31 @@ import java.util.ArrayList;
 
 public class CalendarUtilities
 {
+    //variable for the selected date
     public static LocalDate selectedDate;
 
+    // method used to format the date in the task or new event section
     public static String formattedDate(LocalDate date)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
         return date.format(formatter);
     }
 
+    // method used to format the time in the task or new event section
     public static String formattedTime(LocalTime time)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
         return time.format(formatter);
     }
 
+    // method used to format the month and year
     public static String monthYearFromDate(LocalDate date)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
 
+    // method used to set up the days in the month on the calendar
     public static ArrayList<LocalDate> daysInMonthArray(LocalDate date)
     {
         ArrayList<LocalDate> daysInMonthArray = new ArrayList<>();
@@ -49,6 +54,7 @@ public class CalendarUtilities
         return  daysInMonthArray;
     }
 
+    // method used to set up the days in the week on the calendar
     public static ArrayList<LocalDate> daysInWeekArray(LocalDate selectedDate)
     {
         ArrayList<LocalDate> days = new ArrayList<>();
@@ -63,6 +69,7 @@ public class CalendarUtilities
         return days;
     }
 
+    // method used to set up Sunday and make it the first day of the week on the calendar
     private static LocalDate sundayForDate(LocalDate current)
     {
         LocalDate oneWeekAgo = current.minusWeeks(1);

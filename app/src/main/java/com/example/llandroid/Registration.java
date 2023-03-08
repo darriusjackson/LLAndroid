@@ -9,12 +9,14 @@ import android.view.View;
 import android.widget.Toast;
 
 public class Registration extends AppCompatActivity {
+    // variables used in the Registration code
     TextView txLogIn;
     EditText t1,t2, t3,t4,t5;
     private RegistrationDBManager db2;
     private Button insertRegistration;
 
     @Override
+    // sets up the view of the registration page, initializes methods, sets up attributes for the database manager
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
@@ -27,6 +29,9 @@ public class Registration extends AppCompatActivity {
         t5=(EditText)findViewById(R.id.edtRegistrationConfirmPassword);
         insertRegistration = findViewById(R.id.btnRegistration);
         db2 = new RegistrationDBManager(Registration.this);
+
+        /* saves the registration information the user created through the registration page in the database
+               and gives them access log in into the app */
         insertRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

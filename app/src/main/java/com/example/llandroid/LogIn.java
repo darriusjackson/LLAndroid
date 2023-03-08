@@ -10,12 +10,14 @@ import android.widget.Toast;
 
 
 public class LogIn extends AppCompatActivity {
+    // variables used in the LogIn code
     TextView txRegistration;
     EditText t1,t2;
     private LogInDBManager db;
     private Button insertLogIn;
 
     @Override
+    // sets up the view of the login page, initializes methods, sets up attributes for the database manager
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
@@ -29,6 +31,8 @@ public class LogIn extends AppCompatActivity {
 
             insertLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
+            /* saves the login information the user created through the registration page in the database
+               and gives them access into the app */
           public void onClick (View view) {
                 String email = t1.getText().toString();
                 String pass = t2.getText().toString();

@@ -8,14 +8,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class LogInDBManager extends SQLiteOpenHelper
 {
+    // the name of the database created for the log in page
     private static final String dbname="LinkedList.db";
 
+    // database manager method containing the database and version of the database
     public LogInDBManager(Context context)
     {
         super(context, dbname, null, 1);
     }
 
     @Override
+    // creates the login table in the database
     public void onCreate(SQLiteDatabase db)
     {
         String qry="create table tbl_login (id integer primary key autoincrement, email text, password text)";
@@ -23,12 +26,14 @@ public class LogInDBManager extends SQLiteOpenHelper
     }
 
     @Override
+    // if the login table exists then it will drop the old version and replace with an updated one
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
-        db.execSQL("DROP TABLE IF EXISTS tbl_registration");
+        db.execSQL("DROP TABLE IF EXISTS tbl_login");
         onCreate(db);
     }
 
+    // method used to the login records into the SQLite database
     public String LogInAddDBRecord(String p1, String p2)
     {
         SQLiteDatabase db1=this.getWritableDatabase();

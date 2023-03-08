@@ -14,6 +14,7 @@ import java.util.List;
 
 public class EventAdapter extends ArrayAdapter<Event>
 {
+    // method for the event/task adapter
     public EventAdapter(@NonNull Context context, List<Event> events)
     {
         super(context, 0, events);
@@ -21,6 +22,7 @@ public class EventAdapter extends ArrayAdapter<Event>
 
     @NonNull
     @Override
+    // sets up the new event/task view when the user clicks the New Event button
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
     {
         Event event = getItem(position);

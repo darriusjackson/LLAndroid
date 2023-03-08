@@ -8,19 +8,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class RegistrationDBManager extends SQLiteOpenHelper
 {
+    // the name of the database created for the registration page
     private static final String dbname2="LinkedList.db";
 
+    // database manager method containing the database and version of the database
     public RegistrationDBManager(Context context)
     {
         super(context, dbname2, null, 1);
     }
 
+    // creates the registration table in the database
     @Override
     public void onCreate(SQLiteDatabase db2)
     {
         String qry="create table tbl_registration (id integer primary key autoincrement, fullName text, email text, phoneNumber text, password text, confirmPassword text)";
         db2.execSQL(qry);
     }
+
+    // if the registration table exists then it will drop the old version and replace with an updated one
     @Override
     public void onUpgrade(SQLiteDatabase db2, int oldVersion, int newVersion)
     {
@@ -28,6 +33,7 @@ public class RegistrationDBManager extends SQLiteOpenHelper
         onCreate(db2);
     }
 
+    // method used to the registration records into the SQLite database
     public String RegistrationAddDBRecord(String p1, String p2, String p3, String p4, String p5)
     {
         SQLiteDatabase db2=this.getWritableDatabase();

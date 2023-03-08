@@ -13,14 +13,18 @@ import java.util.ArrayList;
 
 class CalWeekAdapter extends RecyclerView.Adapter<CalViewHolder>
 {
+    // variables for the calendar week adapter
     private final ArrayList<LocalDate> days;
     private final OnItemListener onItemListener;
 
+    // method for the calendar week adapter
     public CalWeekAdapter(ArrayList<LocalDate> days, OnItemListener onItemListener)
     {
         this.days = days;
         this.onItemListener = onItemListener;
     }
+
+    // calls a method from CalViewHolder to adapt the days into the days of the week and month
 
     @NonNull
     @Override
@@ -37,6 +41,7 @@ class CalWeekAdapter extends RecyclerView.Adapter<CalViewHolder>
         return new CalViewHolder(view, onItemListener, days);
     }
 
+    // calls a second method from CalViewHolder to adapt the days into the days of the month
     @Override
     public void onBindViewHolder(@NonNull CalViewHolder holder, int position)
     {
@@ -51,12 +56,14 @@ class CalWeekAdapter extends RecyclerView.Adapter<CalViewHolder>
         }
     }
 
+    // gets the number of days for the weeek
     @Override
     public int getItemCount()
     {
         return days.size();
     }
 
+    // public interface that was used to set up the month and week views of the calendar
     public interface  OnItemListener
     {
         void onItemClick(int position, LocalDate date);

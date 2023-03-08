@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.time.LocalTime;
 
 public class EventEdit extends AppCompatActivity {
+    // variables used in the EventEdit code
     private EditText eventNameText;
     private TextView eventDateText, eventTimeText;
 
@@ -20,6 +21,7 @@ public class EventEdit extends AppCompatActivity {
     private Button insertTask;
     private LocalTime time;
 
+    // sets up the view of the event/task edit page, initializes methods, sets up attributes for the database manager
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class EventEdit extends AppCompatActivity {
 
     }
 
+    // the variables are assigned to certain IDs using the findViewById()
     private void initWidgets() {
         eventNameText = findViewById(R.id.eventNameText);
         eventDateText = findViewById(R.id.eventDateText);
@@ -41,6 +44,7 @@ public class EventEdit extends AppCompatActivity {
     }
 
 
+    // saves the event/task the user created for that day and adds the task record into the SQLite database
     public void saveEventButton(View view) {
 
         String eventName = eventNameText.getText().toString();
