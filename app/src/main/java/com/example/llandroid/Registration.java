@@ -1,6 +1,8 @@
 package com.example.llandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +47,8 @@ public class Registration extends AppCompatActivity {
                 if (fullName.isEmpty() && email.isEmpty() && mobile.isEmpty() && pass.isEmpty() && confirmPass.isEmpty()){
                     Toast.makeText(Registration.this, "Enter all data",Toast.LENGTH_LONG).show();
                     return;
+                }else {
+                    startActivity(new Intent(Registration.this, LogIn.class));
                 }
 
                 db2.RegistrationAddDBRecord(fullName, email, mobile, pass,confirmPass);

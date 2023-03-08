@@ -1,6 +1,8 @@
 package com.example.llandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,7 +43,6 @@ public class LogIn extends AppCompatActivity {
                     Toast.makeText(LogIn.this, "Enter all data",Toast.LENGTH_LONG).show();
                     return;
                 }
-
                 db.LogInAddDBRecord(email,pass);
 
                 Toast.makeText(LogIn.this, "Log In added",Toast.LENGTH_LONG).show();
