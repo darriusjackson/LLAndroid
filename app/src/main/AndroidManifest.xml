@@ -18,6 +18,12 @@
             android:name=".EventEdit"
             android:exported="false" />
         <activity
+            android:name=".NotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoteDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".WeekView"
             android:exported="false" />
         <activity

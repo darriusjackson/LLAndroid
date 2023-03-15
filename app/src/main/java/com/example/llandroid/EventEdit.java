@@ -35,7 +35,7 @@ public class EventEdit extends AppCompatActivity {
 
     }
 
-    // the variables are assigned to certain IDs using the findViewById()
+    // the variables are assigned to certain IDs using findViewById()
     private void initWidgets() {
         eventNameText = findViewById(R.id.eventNameText);
         eventDateText = findViewById(R.id.eventDateText);

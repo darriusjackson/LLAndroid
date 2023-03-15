@@ -42,7 +42,10 @@ public class LogIn extends AppCompatActivity {
                 if (email.isEmpty() && pass.isEmpty()){
                     Toast.makeText(LogIn.this, "Enter all data",Toast.LENGTH_LONG).show();
                     return;
+                }else {
+                    startActivity(new Intent(LogIn.this, Calendar.class));
                 }
+
                 db.LogInAddDBRecord(email,pass);
 
                 Toast.makeText(LogIn.this, "Log In added",Toast.LENGTH_LONG).show();
