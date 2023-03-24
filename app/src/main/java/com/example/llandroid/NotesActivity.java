@@ -1,12 +1,19 @@
 package com.example.llandroid;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class NotesActivity extends AppCompatActivity {
     // variable for the NotesActivity code
@@ -21,6 +28,33 @@ public class NotesActivity extends AppCompatActivity {
         loadFromDBToMemory();
         setNoteAdapter();
         setOnClickListener();
+
+
+        // variables used for the bottom navigation method
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_2);
+        bottomNavigationView.setSelectedItemId(R.id.settings);
+
+        // method used to get the bottom navigation to work
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.notes:
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(NotesActivity.this,SettingsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.calender:
+                        startActivity(new Intent(NotesActivity.this,Calendar.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
+
     }
 
 

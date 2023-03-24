@@ -1,10 +1,13 @@
 package com.example.llandroid;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 //import android.widget.Toast;
@@ -16,6 +19,9 @@ import java.util.ArrayList;
 
 import static com.example.llandroid.CalendarUtilities.daysInMonthArray;
 import static com.example.llandroid.CalendarUtilities.monthYearFromDate;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class Calendar extends AppCompatActivity implements CalWeekAdapter.OnItemListener
 {
@@ -32,6 +38,31 @@ public class Calendar extends AppCompatActivity implements CalWeekAdapter.OnItem
         initWidgets();
         CalendarUtilities.selectedDate = LocalDate.now();
         setMonthView();
+
+        // variables used for the bottom navigation method
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.settings);
+
+        // method used to get the bottom navigation to work
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.calender:
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(Calendar.this,SettingsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.notes:
+                        startActivity(new Intent(Calendar.this,NotesActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
 
     }
 // the variables are assigned to certain IDs using the findViewById()

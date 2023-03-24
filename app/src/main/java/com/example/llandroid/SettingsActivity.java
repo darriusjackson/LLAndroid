@@ -1,14 +1,21 @@
 package com.example.llandroid;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsActivity extends AppCompatActivity
@@ -16,6 +23,7 @@ public class SettingsActivity extends AppCompatActivity
     // declaring variables for the settings view, switch, text views, and user settings
     private View parentView;
     private SwitchMaterial themeSwitch;
+
     private TextView themeTV, titleTV, aboutID, versionID;
 
     private UserSettings settings;
@@ -33,6 +41,32 @@ public class SettingsActivity extends AppCompatActivity
         initWidgets();
         loadSharedPreferences();
         initSwitchListener();
+
+        // variables used for the bottom navigation method
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_3);
+        bottomNavigationView.setSelectedItemId(R.id.settings);
+
+        // method used to get the bottom navigation to work
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.settings:
+                        return true;
+                    case R.id.calender:
+                        startActivity(new Intent(SettingsActivity.this,Calendar.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.notes:
+                        startActivity(new Intent(SettingsActivity.this,NotesActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
+
     }
 
     // set the text view variables to their respective IDs
@@ -105,4 +139,9 @@ public class SettingsActivity extends AppCompatActivity
 
     }
 
+    // method used to log out the app
+    public void logOut(View view) {
+        Intent logOutIntent = new Intent(this, LogIn.class);
+        startActivity(logOutIntent);
+    }
 }
