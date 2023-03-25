@@ -99,5 +99,10 @@ public class WeekView extends AppCompatActivity implements CalWeekAdapter.OnItem
         startActivity(new Intent(WeekView.this, EventEdit.class));
     }
 
+    // takes the user back to the monthly view
+    public void monthlyViewAction(View view)
+    {
+        startActivity(new Intent(WeekView.this, Calendar.class));
+    }
 
 }

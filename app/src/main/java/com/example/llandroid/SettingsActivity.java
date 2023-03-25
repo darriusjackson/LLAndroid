@@ -122,7 +122,7 @@ public class SettingsActivity extends AppCompatActivity
             aboutID.setTextColor(white);
             versionID.setTextColor(white);
             themeTV.setTextColor(white);
-            themeTV.setText("Dark");
+            themeTV.setText("Dark Mode");
             parentView.setBackgroundColor(black);
             themeSwitch.setChecked(true);
         }
@@ -132,7 +132,7 @@ public class SettingsActivity extends AppCompatActivity
             versionID.setTextColor(black);
             titleTV.setTextColor(black);
             themeTV.setTextColor(black);
-            themeTV.setText("Light");
+            themeTV.setText("Light Mode");
             parentView.setBackgroundColor(white);
             themeSwitch.setChecked(false);
         }
