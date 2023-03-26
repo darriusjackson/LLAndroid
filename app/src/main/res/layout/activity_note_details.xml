@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
-        android:minLines="3"
+        android:minLines="10"
         android:textColor="@color/black"
         android:layout_gravity="center"/>
 
