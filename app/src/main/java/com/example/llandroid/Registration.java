@@ -3,6 +3,7 @@ package com.example.llandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 public class Registration extends AppCompatActivity {
     // variables used in the Registration code
     TextView txLogIn;
-    EditText t1,t2, t3,t4,t5;
+    EditText t1, t2, t3, t4, t5;
     private RegistrationDBManager db2;
     private Button insertRegistration;
 
@@ -23,12 +24,13 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         txLogIn = findViewById(R.id.txLogIn);
+        setupLogInActivityLink();
 
-        t1=(EditText)findViewById(R.id.edtRegistrationFullName);
-        t2=(EditText)findViewById(R.id.edtRegistrationEmail);
-        t3=(EditText)findViewById(R.id.edtRegistrationMobile);
-        t4=(EditText)findViewById(R.id.edtRegistrationPassword);
-        t5=(EditText)findViewById(R.id.edtRegistrationConfirmPassword);
+        t1 = (EditText) findViewById(R.id.edtRegistrationFullName);
+        t2 = (EditText) findViewById(R.id.edtRegistrationEmail);
+        t3 = (EditText) findViewById(R.id.edtRegistrationMobile);
+        t4 = (EditText) findViewById(R.id.edtRegistrationPassword);
+        t5 = (EditText) findViewById(R.id.edtRegistrationConfirmPassword);
         insertRegistration = findViewById(R.id.btnRegistration);
         db2 = new RegistrationDBManager(Registration.this);
 
@@ -44,16 +46,16 @@ public class Registration extends AppCompatActivity {
                 String confirmPass = t5.getText().toString();
 
 
-                if (fullName.isEmpty() && email.isEmpty() && mobile.isEmpty() && pass.isEmpty() && confirmPass.isEmpty()){
-                    Toast.makeText(Registration.this, "Enter all data",Toast.LENGTH_LONG).show();
+                if (fullName.isEmpty() && email.isEmpty() && mobile.isEmpty() && pass.isEmpty() && confirmPass.isEmpty()) {
+                    Toast.makeText(Registration.this, "Enter all data", Toast.LENGTH_LONG).show();
                     return;
-                }else {
+                } else {
                     startActivity(new Intent(Registration.this, LogIn.class));
                 }
 
-                db2.RegistrationAddDBRecord(fullName, email, mobile, pass,confirmPass);
+                db2.RegistrationAddDBRecord(fullName, email, mobile, pass, confirmPass);
 
-                Toast.makeText(Registration.this, "Registration added",Toast.LENGTH_LONG).show();
+                Toast.makeText(Registration.this, "Registration added", Toast.LENGTH_LONG).show();
                 t1.setText("");
                 t2.setText("");
                 t3.setText("");
@@ -61,6 +63,19 @@ public class Registration extends AppCompatActivity {
                 t5.setText("");
 
 
+            }
+        });
+    }
+
+    // sets up the log in link the user can click on if they do have an account
+    private void setupLogInActivityLink() {
+        TextView LogInLink = findViewById(R.id.txLogIn);
+        LogInLink.setTextColor(Color.BLACK);
+        LogInLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logInIntent = new Intent(Registration.this, LogIn.class);
+                startActivity(logInIntent);
             }
         });
     }

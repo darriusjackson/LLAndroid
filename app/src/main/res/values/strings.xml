@@ -3,4 +3,6 @@
     <string name="full_name">Full Name</string>
     <string name="open">Sidebar opened</string>
     <string name="close">Sidebar closed</string>
+    <string name="register_activity_link">Register</string>
+    <string name="login_activity_link">Log In</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.llandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,12 +25,12 @@ public class LogIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         txRegistration = findViewById(R.id.txRegistration);
-
-
+        setupRegisterActivityLink();
         t1=(EditText)findViewById(R.id.edtRegistrationEmail);
         t2=(EditText)findViewById(R.id.edtRegistrationPassword);
         insertLogIn = findViewById(R.id.btnLogIn);
         db = new LogInDBManager(LogIn.this);
+
 
             insertLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,5 +55,23 @@ public class LogIn extends AppCompatActivity {
 
          }
             });
+
+
+            }
+
+            // sets up the registration link the user can click on if they do not have an account
+    private void setupRegisterActivityLink() {
+        TextView registerLink = findViewById(R.id.txRegistration);
+        registerLink.setTextColor(Color.BLACK);
+        registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerIntent = new Intent(LogIn.this, Registration.class);
+                startActivity(registerIntent);
+            }
+        });
+
+        }
     }
-}
+
+
