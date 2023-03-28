@@ -66,7 +66,7 @@ public class ProfilePage extends AppCompatActivity {
             }
         });
 
-        /* saves the update  information the user created through the registration page in the database
+        /* saves the update  information the user created through the profile page in the database
                and gives them access log in into the app */
         insertUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +109,7 @@ public class ProfilePage extends AppCompatActivity {
             }
         });
     }
-    // sets up the log out link the user can click on if they want to log out the app
+    // sets up the contact us link the user can click on if they want to leave any thoughts about the app
     private void setupContactUsActivityLink() {
         TextView contactUsLink = findViewById(R.id.contactUs);
         contactUsLink.setTextColor(Color.BLACK);
