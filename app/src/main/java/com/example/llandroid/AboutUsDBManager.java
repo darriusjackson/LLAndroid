@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class AboutUsDBManager extends SQLiteOpenHelper {
-    // the name of the database created for the registration page
+    // the name of the database created for the about us page
     private static final String dbname2 = "LinkedListAboutUs.db";
 
     // database manager method containing the database and version of the database
@@ -15,7 +15,7 @@ public class AboutUsDBManager extends SQLiteOpenHelper {
         super(context, dbname2, null, 1);
     }
 
-    // creates the about us  table in the database
+    // creates the about us in the database
     @Override
     public void onCreate(SQLiteDatabase db2) {
         String qry = "create table tbl_registration (id integer primary key autoincrement, fullName text, email text, message text)";
