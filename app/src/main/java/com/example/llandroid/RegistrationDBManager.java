@@ -53,22 +53,6 @@ public class RegistrationDBManager extends SQLiteOpenHelper
             return "Successfully inserted";
     }
 
-    public String updateUserInfoInDB(String p1, String p2, String p3, String p4)
-    {
-        SQLiteDatabase db2 = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("email", p1);
-        contentValues.put("phoneNumber", p2);
-        contentValues.put("password", p3);
-        contentValues.put("fullName", p4);
-
-        long res2= db2.update("tbl_registration", contentValues, "fullName" + " =? ", new String[]{p4});
-        if(res2==-1)
-            return "Update failed";
-        else
-            return "Successfully updated";
-    }
-
     }
 
 

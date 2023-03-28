@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfilePage extends AppCompatActivity {
     // variables used in the ProfilePage code
-    EditText t1, t2, t3, t4;
+    EditText t1, t2, t3, t4,t5;
     private RegistrationDBManager db2;
     private Button insertUpdate;
 
@@ -33,6 +33,7 @@ public class ProfilePage extends AppCompatActivity {
         t2 = (EditText) findViewById(R.id.updRegistrationEmail);
         t3 = (EditText) findViewById(R.id.updRegistrationMobile);
         t4 = (EditText) findViewById(R.id.updRegistrationPassword);
+        t5 = (EditText) findViewById(R.id.updRegistrationConfirmPassword);
         insertUpdate= findViewById(R.id.updRegistration);
         db2 = new RegistrationDBManager(ProfilePage.this);
 
@@ -74,19 +75,21 @@ public class ProfilePage extends AppCompatActivity {
                 String email = t2.getText().toString();
                 String mobile = t3.getText().toString();
                 String pass = t4.getText().toString();
+                String confirmPass = t5.getText().toString();
 
 
-                if (fullName.isEmpty() && email.isEmpty() && mobile.isEmpty() && pass.isEmpty()) {
+                if (fullName.isEmpty() && email.isEmpty() && mobile.isEmpty() && pass.isEmpty() && confirmPass.isEmpty()) {
                     Toast.makeText(ProfilePage.this, "Enter all data", Toast.LENGTH_LONG).show();
                     return;
                 }
-                db2.updateUserInfoInDB(fullName, email, mobile, pass);
+                db2.RegistrationAddDBRecord(fullName, email, mobile, pass,confirmPass);
 
                 Toast.makeText(ProfilePage.this, "Update added", Toast.LENGTH_LONG).show();
                 t1.setText("");
                 t2.setText("");
                 t3.setText("");
                 t4.setText("");
+                t5.setText("");
 
 
 
