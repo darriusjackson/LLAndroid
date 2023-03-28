@@ -49,6 +49,10 @@ public class NotesActivity extends AppCompatActivity {
                         startActivity(new Intent(NotesActivity.this,Calendar.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.profile:
+                        startActivity(new Intent(NotesActivity.this,ProfilePage.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
                 }
                 return false;

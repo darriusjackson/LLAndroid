@@ -61,6 +61,10 @@ public class SettingsActivity extends AppCompatActivity
                         startActivity(new Intent(SettingsActivity.this,NotesActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.profile:
+                        startActivity(new Intent(SettingsActivity.this,ProfilePage.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
                 }
                 return false;

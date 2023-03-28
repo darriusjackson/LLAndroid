@@ -58,6 +58,10 @@ public class Calendar extends AppCompatActivity implements CalWeekAdapter.OnItem
                         startActivity(new Intent(Calendar.this,NotesActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.profile:
+                        startActivity(new Intent(Calendar.this,ProfilePage.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
                 }
                 return false;

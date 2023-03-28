@@ -5,4 +5,6 @@
     <string name="close">Sidebar closed</string>
     <string name="register_activity_link">Register</string>
     <string name="login_activity_link">Log In</string>
+    <string name="contactUs_activity_link">Contact Us</string>
+    <string name="logOut_activity_link">Log Out</string>
 </resources>

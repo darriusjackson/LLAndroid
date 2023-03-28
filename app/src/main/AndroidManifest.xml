@@ -15,6 +15,12 @@
         android:theme="@style/Theme.LLAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ProfilePage"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
             android:name=".EventEdit"
             android:exported="false" />
         <activity
