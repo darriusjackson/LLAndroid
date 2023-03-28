@@ -28,7 +28,8 @@ public class AboutUs extends AppCompatActivity {
         insertAboutUs = findViewById(R.id.submit_button);
         db2 = new AboutUsDBManager(AboutUs.this);
 
-        /* saves the message the user created through the about us page in the database */
+        /* saves the registration information the user created through the registration page in the database
+               and gives them access log in into the app */
         insertAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
