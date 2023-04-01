@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this,ProfilePage.class);
+                Intent i = new Intent(MainActivity.this,SplashScreen.class);
                 startActivity(i);
                 finish();
 

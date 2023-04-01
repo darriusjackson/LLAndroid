@@ -55,7 +55,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_2"
         android:layout_width="match_parent"
-        android:layout_height="99dp"
+        android:layout_height="85dp"
         android:layout_alignParentBottom="true"
         android:background="@color/purple_200"
         app:itemIconSize="30dp"

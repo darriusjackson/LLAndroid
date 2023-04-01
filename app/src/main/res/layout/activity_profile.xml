@@ -205,8 +205,9 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_4"
             android:layout_width="match_parent"
-            android:layout_height="117dp"
+            android:layout_height="75dp"
             android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
             android:background="@color/purple_200"
             app:itemIconSize="30dp"
             app:itemIconTint="@color/white"
