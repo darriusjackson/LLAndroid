@@ -80,7 +80,6 @@ public class SettingsActivity extends AppCompatActivity
         titleTV = findViewById(R.id.titleTV);
         themeSwitch = findViewById(R.id.themeSwitch);
         parentView = findViewById(R.id.parentView);
-        aboutID = findViewById(R.id.aboutID);
         versionID = findViewById(R.id.versionID);
     }
 
@@ -123,7 +122,6 @@ public class SettingsActivity extends AppCompatActivity
         if(settings.getCustomTheme().equals(UserSettings.DARK_THEME))
         {
             titleTV.setTextColor(white);
-            aboutID.setTextColor(white);
             versionID.setTextColor(white);
             themeTV.setTextColor(white);
             themeTV.setText("Dark Mode");
@@ -132,7 +130,6 @@ public class SettingsActivity extends AppCompatActivity
         }
         else
         {
-            aboutID.setTextColor(black);
             versionID.setTextColor(black);
             titleTV.setTextColor(black);
             themeTV.setTextColor(black);
