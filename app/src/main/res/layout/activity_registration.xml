@@ -18,7 +18,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="15dp">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -26,10 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Registration"
+            android:text="Linked List Registration"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="50sp" />
+            android:textSize="20dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -72,7 +72,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="6dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -87,7 +87,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="6dp"
                 android:hint="Mobile Number"
                 android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/black">
@@ -108,7 +108,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="6dp"
             android:hint="Password"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
@@ -128,7 +128,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="6dp"
             android:hint="Confirm Password"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
@@ -142,12 +142,43 @@
                 android:singleLine="true"
                 android:textColor="@color/black" />
 
+
         </com.google.android.material.textfield.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/boxTOS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/link_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/boxTOS"
+            android:layout_marginStart="6dp"
+            android:text="I agree to the terms and conditions"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+        <CheckBox
+            android:id="@+id/boxPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/link_PP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/boxPP"
+            android:layout_marginStart="6dp"
+            android:text="I agree to the privacy policy"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="15dp">
 
             <ProgressBar
                 android:id="@+id/RegistrationProgressBar"
@@ -156,6 +187,8 @@
                 android:layout_gravity="center_horizontal"
                 android:visibility="invisible" />
 
+
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegistration"
                 android:layout_width="match_parent"
@@ -163,7 +196,7 @@
                 android:backgroundTint="@color/black"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
-                android:paddingEnd="20dp"
+                android:paddingEnd="10dp"
                 android:paddingBottom="20dp"
                 android:text="Register"
                 app:cornerRadius="10dp" />
@@ -173,7 +206,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 

@@ -111,9 +111,9 @@ public class Calendar extends AppCompatActivity implements CalWeekAdapter.OnItem
         }
     }
 // sets up the weekly calendar button
-    public void weeklyAction(View view)
+    public void taskAction(View view)
     {
-        startActivity(new Intent(Calendar.this, WeekView.class));
+        startActivity(new Intent(Calendar.this, EventEdit.class));
 
     }
 }

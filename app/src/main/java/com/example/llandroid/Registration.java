@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
@@ -26,6 +28,10 @@ public class Registration extends AppCompatActivity {
         txLogIn = findViewById(R.id.txLogIn);
         setupLogInActivityLink();
 
+        CheckBox TOSbox = findViewById(R.id.boxTOS);
+        TextView termsofService = findViewById(R.id.link_textview);
+        CheckBox PPbox = findViewById(R.id.boxPP);
+        TextView privacyPolicy = findViewById(R.id.link_PP);
         t1 = (EditText) findViewById(R.id.edtRegistrationFullName);
         t2 = (EditText) findViewById(R.id.edtRegistrationEmail);
         t3 = (EditText) findViewById(R.id.edtRegistrationMobile);
@@ -50,7 +56,7 @@ public class Registration extends AppCompatActivity {
                     Toast.makeText(Registration.this, "Enter all data", Toast.LENGTH_LONG).show();
                     return;
                 } else {
-                    startActivity(new Intent(Registration.this, LogIn.class));
+                    startActivity(new Intent(Registration.this, Calendar.class));
                 }
 
                 db2.RegistrationAddDBRecord(fullName, email, mobile, pass, confirmPass);
@@ -65,7 +71,42 @@ public class Registration extends AppCompatActivity {
 
             }
         });
+
+        // method used so the user can click the link to view the terms of service
+        termsofService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Registration.this, TermsofService.class);
+                startActivity(intent);
+            }
+        });
+        //method used so the user can check the box
+        TOSbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                insertRegistration.setEnabled(isChecked);
+            }
+        });
+        // method used so the user can click the link to view the privacy policy
+        privacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Registration.this, PrivacyPolicy.class);
+                startActivity(intent);
+            }
+        });
+        //method used so the user can check the box
+        PPbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                insertRegistration.setEnabled(isChecked);
+            }
+        });
     }
+
+
+
+
 
     // sets up the log in link the user can click on if they do have an account
     private void setupLogInActivityLink() {
@@ -79,4 +120,5 @@ public class Registration extends AppCompatActivity {
             }
         });
     }
+
 }

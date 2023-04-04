@@ -18,6 +18,12 @@
             android:name=".ProfilePage"
             android:exported="false" />
         <activity
+            android:name=".PrivacyPolicy"
+            android:exported="false" />
+        <activity
+            android:name=".TermsofService"
+            android:exported="false" />
+        <activity
             android:name=".AboutUs"
             android:exported="false" />
         <activity

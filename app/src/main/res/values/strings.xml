@@ -7,4 +7,33 @@
     <string name="login_activity_link">Log In</string>
     <string name="contactUs_activity_link">Contact Us</string>
     <string name="logOut_activity_link">Log Out</string>
+    <string name="forgotPassword">Forgot Password?</string>
+    <string name="termsofService">Terms and Conditions</string>
+    <string name="privacyPolicy">Privacy Policy</string>
+    <string name="terms_of_service_description">
+    <![CDATA[
+    <p><strong><u>Terms and Conditions</u></strong></p>
+    <p>1. Use of this app is subject to these Terms and Conditions.</p>
+    <p>2. You must be 18 years or older to use this app.</p>
+    <p>3. You agree not to use this app for illegal or unauthorized purposes.</p>
+    <p>4. We reserve the right to terminate or suspend your access to this app at any time.</p>
+    <p>5. Your use of this app is at your own risk.</p>
+    <p>6. We are not liable for any damages resulting from your use of this app.</p>
+    <p>7. We may modify these Terms and Conditions at any time without notice.</p>
+    <p>8. By using this app, you agree to these Terms and Conditions.</p>
+    ]]>
+</string>
+
+    <string name="privacy_policy_description">
+      <![CDATA[
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our app.</p>
+        <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
+        <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification.</p>
+        <p>We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</p>
+        <p>Our app may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
+        <p>Your continued use of our app will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
+    ]]>
+</string>
+
 </resources>

@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email: linkedlist@gmail.com"/>
+            android:text="Email: linked.list2023@gmail.com"/>
 
     </LinearLayout>
 

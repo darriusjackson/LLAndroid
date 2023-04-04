@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +25,7 @@ public class SettingsActivity extends AppCompatActivity
     private View parentView;
     private SwitchMaterial themeSwitch;
 
-    private TextView themeTV, titleTV, aboutID, versionID;
+    private TextView themeTV, titleTV,  versionID;
 
     private UserSettings settings;
 
@@ -41,6 +42,7 @@ public class SettingsActivity extends AppCompatActivity
         initWidgets();
         loadSharedPreferences();
         initSwitchListener();
+
 
         // variables used for the bottom navigation method
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_3);
@@ -81,6 +83,7 @@ public class SettingsActivity extends AppCompatActivity
         themeSwitch = findViewById(R.id.themeSwitch);
         parentView = findViewById(R.id.parentView);
         versionID = findViewById(R.id.versionID);
+
     }
 
     //sets up the theme of the app based on the users preference
@@ -127,6 +130,8 @@ public class SettingsActivity extends AppCompatActivity
             themeTV.setText("Dark Mode");
             parentView.setBackgroundColor(black);
             themeSwitch.setChecked(true);
+
+
         }
         else
         {
@@ -136,6 +141,8 @@ public class SettingsActivity extends AppCompatActivity
             themeTV.setText("Light Mode");
             parentView.setBackgroundColor(white);
             themeSwitch.setChecked(false);
+
+
         }
 
     }
@@ -145,4 +152,5 @@ public class SettingsActivity extends AppCompatActivity
         Intent logOutIntent = new Intent(this, LogIn.class);
         startActivity(logOutIntent);
     }
+
 }
