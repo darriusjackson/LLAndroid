@@ -18,6 +18,12 @@
             android:name=".ProfilePage"
             android:exported="false" />
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
+        <activity
             android:name=".PrivacyPolicy"
             android:exported="false" />
         <activity

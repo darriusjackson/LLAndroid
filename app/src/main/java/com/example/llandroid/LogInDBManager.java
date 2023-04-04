@@ -2,6 +2,7 @@ package com.example.llandroid;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -9,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class LogInDBManager extends SQLiteOpenHelper
 {
     // the name of the database created for the log in page
-    private static final String dbname="LinkedList.db";
+    private static final String dbname="LinkedListLogIn.db";
 
     // database manager method containing the database and version of the database
     public LogInDBManager(Context context)
@@ -49,5 +50,25 @@ public class LogInDBManager extends SQLiteOpenHelper
         else
             return "Successfully inserted";
     }
+
+    public Boolean checkEmail(String email) {
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        Cursor cursor = db1.rawQuery("Select * from tbl_login where email = ?", new String[]{email});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+        public Boolean updatePassword(String email, String password){
+            SQLiteDatabase db1 = this.getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put("password", password);
+            long res = db1.update("tbl_login", cv, "email = ?", new String[] {email});
+            if (res == -1)
+                return false;
+            else
+                return true;
+        }
+
 }
 

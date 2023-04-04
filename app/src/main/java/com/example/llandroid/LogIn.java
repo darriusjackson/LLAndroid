@@ -26,6 +26,7 @@ public class LogIn extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
         txRegistration = findViewById(R.id.txRegistration);
         setupRegisterActivityLink();
+        setupForgetPasswordLink();
         t1=(EditText)findViewById(R.id.edtRegistrationEmail);
         t2=(EditText)findViewById(R.id.edtRegistrationPassword);
         insertLogIn = findViewById(R.id.btnLogIn);
@@ -72,6 +73,20 @@ public class LogIn extends AppCompatActivity {
         });
 
         }
+    // sets up the forgot password link the user can click on if they forgot their password
+    private void setupForgetPasswordLink() {
+        TextView forgotLink = findViewById(R.id.txForgotPassword);
+        forgotLink.setTextColor(Color.BLACK);
+        forgotLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent forgotIntent = new Intent(LogIn.this, ForgotPassword.class);
+                startActivity(forgotIntent);
+            }
+        });
+
+    }
+
     }
 
 
