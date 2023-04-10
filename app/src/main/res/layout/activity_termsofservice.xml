@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".TermsofService"
+    tools:context="csc481.linkedlist.llandroid.TermsofService"
     android:scrollbars="vertical">
 
     <LinearLayout

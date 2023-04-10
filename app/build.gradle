@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.llandroid'
+    namespace 'csc481.linkedlist.llandroid'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.llandroid"
+        applicationId "csc481.linkedlist.llandroid"
         minSdk 29
         targetSdk 33
         versionCode 1

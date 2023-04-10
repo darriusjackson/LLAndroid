@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
-        android:name=".UserSettings"
+        android:name="csc481.linkedlist.llandroid.UserSettings"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,52 +15,52 @@
         android:theme="@style/Theme.LLAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".ProfilePage"
+            android:name="csc481.linkedlist.llandroid.ProfilePage"
             android:exported="false" />
         <activity
-            android:name=".ForgotPassword"
+            android:name="csc481.linkedlist.llandroid.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name="csc481.linkedlist.llandroid.ResetPassword"
             android:exported="false" />
         <activity
-            android:name=".PrivacyPolicy"
+            android:name="csc481.linkedlist.llandroid.PrivacyPolicy"
             android:exported="false" />
         <activity
-            android:name=".TermsofService"
+            android:name="csc481.linkedlist.llandroid.TermsofService"
             android:exported="false" />
         <activity
-            android:name=".AboutUs"
+            android:name="csc481.linkedlist.llandroid.AboutUs"
             android:exported="false" />
         <activity
-            android:name=".EventEdit"
+            android:name="csc481.linkedlist.llandroid.EventEdit"
             android:exported="false" />
         <activity
-            android:name=".NotesActivity"
+            android:name="csc481.linkedlist.llandroid.NotesActivity"
             android:exported="false" />
         <activity
-            android:name=".NoteDetailsActivity"
+            android:name="csc481.linkedlist.llandroid.NoteDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".WeekView"
+            android:name="csc481.linkedlist.llandroid.WeekView"
             android:exported="false" />
         <activity
-            android:name=".Calendar"
+            android:name="csc481.linkedlist.llandroid.Calendar"
             android:exported="false" />
         <activity
-            android:name=".Registration"
+            android:name="csc481.linkedlist.llandroid.Registration"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name="csc481.linkedlist.llandroid.LogIn"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name="csc481.linkedlist.llandroid.SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="csc481.linkedlist.llandroid.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="csc481.linkedlist.llandroid.MainActivity"
             android:exported="true">
 
             <intent-filter>

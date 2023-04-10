@@ -4,5 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context="csc481.linkedlist.llandroid.MainActivity"
     android:background="@drawable/qblr2wzxku0o_1440_2880__1_"/>
