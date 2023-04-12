@@ -37,6 +37,7 @@ public class ProfilePage extends AppCompatActivity {
         insertUpdate= findViewById(R.id.updRegistration);
         db2 = new RegistrationDBManager(ProfilePage.this);
 
+
         // variables used for the bottom navigation method
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_4);
         bottomNavigationView.setSelectedItemId(R.id.profile);
