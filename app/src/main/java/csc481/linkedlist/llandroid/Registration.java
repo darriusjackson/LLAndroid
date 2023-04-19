@@ -82,6 +82,8 @@ public class Registration extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // disables the check box initially and makes the button unusable
+        insertRegistration.setEnabled(false);
         //method used so the user can check the box
         TOSbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -97,6 +99,9 @@ public class Registration extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // disables the check box initially and makes the button unusable
+        insertRegistration.setEnabled(false);
         //method used so the user can check the box
         PPbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
